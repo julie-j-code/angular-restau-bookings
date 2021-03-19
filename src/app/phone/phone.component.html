@@ -1,0 +1,14 @@
+
+<mat-card>
+  <mat-card-title>
+    {{user.firstName}} {{user.lastName}} <span *ngIf="user.role !==''"> : {{user.role}}</span>
+  </mat-card-title>
+  <mat-card-subtitle *ngIf="user.award !== ''">
+    récompense : {{user.award}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <p>
+      tel : {{user.phoneNumber}} <button mat-button color="accent" (click)="displayNumber()">zoom</button>
+    </p>
+  </mat-card-content>
+</mat-card>
