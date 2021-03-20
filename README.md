@@ -1,6 +1,15 @@
-# Restaurangular
+# AngularRestaurant
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
+
+# Additionals info for memo
+
+ng generate @angular/material:dashboard <component-name>
+ng generate @angular/material:dashboard --name=main-dash
+qui est un component avec un tableau d'objets qui utilise côté rendu un mat-list-grid et une directive structurelle pour itérer dans le tableau
+ng generate @angular/material:table <component-name>
+ng generate @angular/material:table --name=dish-table
+qui est un component plus complexe puisqu'il a besoin d'un dataSource fortement typé via une interface
 
 ## Development server
 
