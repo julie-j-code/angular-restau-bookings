@@ -11,6 +11,14 @@ ng generate @angular/material:table <component-name>
 ng generate @angular/material:table --name=dish-table
 qui est un component plus complexe puisqu'il a besoin d'un dataSource fortement typé via une interface
 
+## Additional install for ghpages
+
+npm install angular-cli-ghpages --save-dev
+ng build --prod --base-href "https://julie-j-code.github.io/angular-restau-bookings" 
+npx angular-cli-ghpages --dir=dist/restaurangular\wamp\restaurangular>
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -34,3 +42,22 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## For transforming your application to PWA
+
+`ng add @angular/pwa@0.6.8`
+It will install a manifest.json + ngsw-config.json
+
+run : `ng build --prod`
+It will create files under dist/angular-pwa folder.
+
+A PWA only runs on https and localhost environment. The Angular CLI is limited because the service worker do not work with the ng serve command. You have to create a build and host it separately, perhaps using http-server !!!! 
+
+To see a PWA in action, follow the below steps.
+
+Navigate to that folder using cd dist/restaurangular
+Run http-server command (npm i -g http-server)
+Open
+We can create a script to shorten this process. Open a terminal and run npm run start-pwa command.
+
+"start-pwa": "ng build --prod && http-server -p 8080 -c-1 dist/restaurangular"

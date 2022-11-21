@@ -36,6 +36,8 @@ import { MainDashComponent } from "./main-dash/main-dash.component";
 import { DishTableComponent } from "./dish-table/dish-table.component";
 import { ScheduleComponent } from './schedule/schedule.component';
 import { PhoneComponent } from './phone/phone.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -82,7 +84,8 @@ const routes: Routes = [
     MatDatepickerModule,
     MatSelectModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production})
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},],
   bootstrap: [AppComponent]
