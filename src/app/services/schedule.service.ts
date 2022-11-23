@@ -9,7 +9,8 @@ import { Schedule } from '../models/schedule.interface';
   providedIn: 'root'
 })
 export class ScheduleService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   getAllEvents(): Observable<EveningEvent[]> {
     return this.httpClient

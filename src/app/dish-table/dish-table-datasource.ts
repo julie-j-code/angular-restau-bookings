@@ -31,9 +31,11 @@ const EXAMPLE_DATA: DishTableItem[] = [
  */
 export class DishTableDataSource extends DataSource<DishTableItem> {
   data: DishTableItem[] = EXAMPLE_DATA;
+  update : boolean = false;
 
   constructor(private paginator: MatPaginator, private sort: MatSort) {
     super();
+
   }
 
   /**
